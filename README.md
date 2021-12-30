@@ -1,6 +1,6 @@
 # bw2pass
 
-Bitwarden to pass conversion utility.
+Bitwarden to pass conversion utility. Currently only works on CSV files.
 
 1. Export Bitwarden vault
 2. Run `bw2pass <vault_file>`
