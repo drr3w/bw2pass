@@ -64,11 +64,11 @@ class BWVault:
 
     def create_pass_entry(self, bw_item):
 
-        msg = f"{bw_item.login_password}\nUSERNAME: {bw_item.login_username}\n NOTES: {bw_item.notes}"
+        entry = f"{bw_item.login_password}\nUSERNAME: {bw_item.login_username}\nURI: {bw_item.login_uri}\nNOTES:\n{bw_item.notes}"
         pass_process = Popen(
             ["pass", "insert", "--multiline", bw_item.name], stdin=PIPE, stdout=PIPE
         )
-        pass_process.communicate(msg.encode())
+        pass_process.communicate(entry.encode())
         pass_process.wait()
 
 
